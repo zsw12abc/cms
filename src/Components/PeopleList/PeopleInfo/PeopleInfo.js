@@ -20,18 +20,18 @@ class PeopleInfo extends Component {
 					<div className={'col-sm-8'}>
 						<div className={'NameContent-Edit'}>
 							<p>Name: <input className={'Input'}
-								placeholder={person.name}
-								type={'text'}
-								onChange={(event) => (
-									personName = event.target.value
-								)}/>
+							                placeholder={person.name}
+							                type={'text'}
+							                onChange={(event) => (
+								                personName = event.target.value
+							                )}/>
 							</p>
 							<p>Age: <input className={'Input'}
 							               placeholder={person.age}
 							               type={'text'}
 							               onChange={(event) => (
-									personAge = parseInt(event.target.value, 10)
-								)}/>
+								               personAge = parseInt(event.target.value, 10)
+							               )}/>
 							</p>
 						</div>
 						<div className={'row justify-content-center'}>
