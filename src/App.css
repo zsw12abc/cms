@@ -23,3 +23,8 @@
     font-size: 18px;
     font-family: 'Arial';
 }
+
+.Avatar {
+    width: 100px;
+    height: 100px;
+}
