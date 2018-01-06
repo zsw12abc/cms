@@ -1,5 +1,7 @@
 export {
 	saveNameCard,
 	editNameCard,
-	cancelNameCard
+	cancelNameCard,
+	filterNameCard,
+	searchNameCard
 } from './nameCardReducer';

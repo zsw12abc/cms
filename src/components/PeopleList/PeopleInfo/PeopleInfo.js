@@ -49,7 +49,6 @@ class PeopleInfo extends Component {
 					</div>
 				</div>
 			)
-
 		} else {
 			personInfo = (
 				<div className={'row'}>

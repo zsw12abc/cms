@@ -24,6 +24,9 @@ const reducer = (state = initialState, action) => {
 			return saveButtonHandler(state, action);
 		case actionTypes.CANCEL_NAME_CARD:
 			return cancelButtonHandler(state, action);
+		case actionTypes.FILTER_NAME_CARD:
+		case actionTypes.SEARCH_NAME_CARD:
+			return searchButtonHandler(state, action);
 		default:
 			return state
 	}
@@ -41,7 +44,6 @@ const cancelButtonHandler = (state, action) => {
 const saveButtonHandler = (state, action) => {
 	return switchEditModeHandler(state, action, 'save');
 };
-
 
 const switchEditModeHandler = (state, action, type) => {
 	let peopleList = [...state.people];
@@ -67,6 +69,10 @@ const switchEditModeHandler = (state, action, type) => {
 		...state,
 		people: peopleList
 	});
+};
+
+const searchButtonHandler = (state, action) => {
+
 };
 
 export default reducer;
