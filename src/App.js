@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Button, Well} from 'react-bootstrap';
 import './App.css'
 import reactImg from './img/react.png';
 import pikaImg from './img/pikachu.jpg';
+import PeopleList from "./Components/PeopleList/PeopleList";
 
 class App extends Component {
 	state = {
@@ -33,31 +33,7 @@ class App extends Component {
 		if (this.state.editMode) {
 
 		} else {
-			displayMode = (
-				<div>
-					{this.state.people.map(person => {
-						return (
-							<Well className={'WellStyles'} key={person.id}>
-								<div className={'row'}>
-									<div className={'Photo col-sm'}>
-										<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
-									</div>
-									<div className={'col-sm'}>
-										<div className={'NameContent'}>
-											<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
-											<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
-											<p>ID: <span>{person.id}</span></p>
-										</div>
-										<Button className={"btn btn-dark"}
-										        onClick={() => this.switchEditModeHandler(person)}>Edit</Button>
-									</div>
-								</div>
-							</Well>
-						)
-					})
-					}
-				</div>
-			);
+			displayMode = <PeopleList list={this.state.people} clicked={this.switchEditModeHandler}/>
 		}
 
 
