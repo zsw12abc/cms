@@ -41,6 +41,14 @@
     background: transparent;
 }
 
-.WellBox {
+.Card {
     padding: 0px 15px;
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
 }

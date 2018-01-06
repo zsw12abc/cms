@@ -74,7 +74,7 @@ class PeopleInfo extends Component {
 			)
 		}
 		return (
-			<div className={'well col-sm WellBox'}>
+			<div className={'col-sm-4 Card'}>
 				{personInfo}
 			</div>
 		);

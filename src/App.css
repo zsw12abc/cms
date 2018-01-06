@@ -1,5 +1,10 @@
 .App {
     text-align: center;
-    width: 1000px;
     margin: 0 auto;
+    background-color: #f3f3f3;
+}
+
+.MainArea {
+    padding-right: 5%;
+
 }
