@@ -9,7 +9,7 @@ class PeopleList extends Component {
 			<div className={'row'}>
 				{
 					peopleList.map(person => {
-						return (
+						let peopleCell = (
 							<PeopleInfo
 								key={person.id}
 								person={person}
@@ -17,7 +17,11 @@ class PeopleList extends Component {
 								cancelButtonClicked={this.props.cancelButtonClicked}
 								saveButtonClicked={this.props.saveButtonClicked}
 							/>
-						)
+						);
+						if (!person.display) {
+							peopleCell = null;
+						}
+						return peopleCell
 					})
 				}
 			</div>

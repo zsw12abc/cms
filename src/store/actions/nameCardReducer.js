@@ -21,13 +21,6 @@ export const cancelNameCard = (person) => {
 	}
 };
 
-export const filterNameCard = (name) => {
-	return {
-		type: actionTypes.FILTER_NAME_CARD,
-		name: name
-	}
-};
-
 export const searchNameCard = (name) => {
 	return {
 		type: actionTypes.SEARCH_NAME_CARD,

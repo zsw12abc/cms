@@ -4,15 +4,15 @@ import pikaImg from '../../img/pikachu.jpg';
 
 const initialState = {
 	people: [
-		{id: 1, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false},
-		{id: 2, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false},
-		{id: 3, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false},
-		{id: 4, name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false},
-		{id: 5, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false},
-		{id: 6, name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false},
-		{id: 7, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false},
-		{id: 8, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false},
-		{id: 9, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false},
+		{id: 1, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
+		{id: 2, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
+		{id: 3, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
+		{id: 4, name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false, display: true},
+		{id: 5, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false, display: true},
+		{id: 6, name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false, display: true},
+		{id: 7, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
+		{id: 8, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
+		{id: 9, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
 	]
 };
 
@@ -24,7 +24,6 @@ const reducer = (state = initialState, action) => {
 			return saveButtonHandler(state, action);
 		case actionTypes.CANCEL_NAME_CARD:
 			return cancelButtonHandler(state, action);
-		case actionTypes.FILTER_NAME_CARD:
 		case actionTypes.SEARCH_NAME_CARD:
 			return searchButtonHandler(state, action);
 		default:
@@ -47,9 +46,14 @@ const saveButtonHandler = (state, action) => {
 
 const switchEditModeHandler = (state, action, type) => {
 	let peopleList = [...state.people];
-	let selectedPerson = peopleList.filter(person => {
+	let selectedList = peopleList.filter(person => {
 		return (person.id === action.person.id)
-	})[0];
+	});
+	let person;
+	let selectedPerson = null;
+	for (person in selectedList) {
+		selectedPerson = selectedList[person];
+	}
 	switch (type) {
 		case 'edit':
 			selectedPerson.editMode = true;
@@ -72,7 +76,25 @@ const switchEditModeHandler = (state, action, type) => {
 };
 
 const searchButtonHandler = (state, action) => {
-
+	let peopleList = [...state.people];
+	let notSelectedList = peopleList.filter(person => {
+		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) === -1);
+	});
+	let notIncludedPerson;
+	for (notIncludedPerson in notSelectedList) {
+		notSelectedList[notIncludedPerson].display = false;
+	}
+	let selectedList = peopleList.filter(person => {
+		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) !== -1);
+	});
+	let includedPerson;
+	for (includedPerson in selectedList) {
+		selectedList[includedPerson].display = true;
+	}
+	return ({
+		...state,
+		people: peopleList
+	})
 };
 
 export default reducer;

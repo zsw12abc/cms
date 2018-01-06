@@ -8,21 +8,21 @@ class NavigationBar extends Component {
 		return (
 			<nav className={'navbar navbar-light bg-light justify-content-between'}>
 				<a className={'navbar-brand mb-0 h1'}>Client Manager System</a>
-				<form className={'form-inline my-2 my-lg-0'}>
+				<div className={'form-inline my-2 my-lg-0'}>
 					<input className={"form-control mr-sm-2"}
 					       type="search"
 					       placeholder={"Search"}
 					       onChange={(event) => {
 						       searchName = event.target.value;
-						       this.props.onFilterNameCardCounter(searchName);
+						       this.props.onSearchNameCardCounter(searchName);
 					       }}
 					       aria-label="Search"
 					/>
 					<button className={"btn btn-outline-primary my-2 my-sm-0"}
-					        onClick={this.props.onSearchNameCardCounter(searchName)}
+					        onClick={() => this.props.onSearchNameCardCounter(searchName)}
 					        type="submit">Search
 					</button>
-				</form>
+				</div>
 			</nav>
 		);
 	}
@@ -36,7 +36,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onFilterNameCardCounter: (name) => dispatch(actions.filterNameCard(name)),
 		onSearchNameCardCounter: (name) => dispatch(actions.searchNameCard(name))
 	}
 };
