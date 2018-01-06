@@ -19,34 +19,34 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.EDIT_NAME_CARD:
-			return editButtonHandler(action.person);
+			return editButtonHandler(state, action);
 		case actionTypes.SAVE_NAME_CARD:
-			return saveButtonHandler(action.person, action.name, action.age);
+			return saveButtonHandler(state, action);
 		case actionTypes.CANCEL_NAME_CARD:
-			return cancelButtonHandler(action.person);
+			return cancelButtonHandler(state, action);
 		default:
 			return state
 	}
 };
 
 
-const editButtonHandler = (p) => {
-	switchEditModeHandler(p, 'edit');
+const editButtonHandler = (state, action) => {
+	return switchEditModeHandler(state, action, 'edit');
 };
 
-const cancelButtonHandler = (p) => {
-	switchEditModeHandler(p, 'cancel');
+const cancelButtonHandler = (state, action) => {
+	return switchEditModeHandler(state, action, 'cancel');
 };
 
-const saveButtonHandler = (p, pName, pAge) => {
-	switchEditModeHandler(p, 'save', pName, pAge);
+const saveButtonHandler = (state, action) => {
+	return switchEditModeHandler(state, action, 'save');
 };
 
 
-const switchEditModeHandler = (p, type, pName = null, pAge = null) => {
-	let peopleList = [...this.state.people];
+const switchEditModeHandler = (state, action, type) => {
+	let peopleList = [...state.people];
 	let selectedPerson = peopleList.filter(person => {
-		return (person.id === p.id)
+		return (person.id === action.person.id)
 	})[0];
 	switch (type) {
 		case 'edit':
@@ -54,8 +54,8 @@ const switchEditModeHandler = (p, type, pName = null, pAge = null) => {
 			break;
 		case 'save':
 			selectedPerson.editMode = false;
-			selectedPerson.name = pName;
-			selectedPerson.age = pAge;
+			selectedPerson.name = action.name;
+			selectedPerson.age = action.age;
 			break;
 		case 'cancel':
 			selectedPerson.editMode = false;
@@ -64,7 +64,7 @@ const switchEditModeHandler = (p, type, pName = null, pAge = null) => {
 			break;
 	}
 	return ({
-		...this.state,
+		...state,
 		people: peopleList
 	});
 };
