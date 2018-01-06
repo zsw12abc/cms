@@ -68,7 +68,6 @@ class PeopleInfo extends Component {
 						<div className={'NameContent'}>
 							<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
 							<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
-							<p>ID: <span>{person.id}</span></p>
 						</div>
 					</div>
 				</div>
