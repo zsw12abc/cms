@@ -4,8 +4,11 @@ import {Button, Well} from 'react-bootstrap';
 import './PeopleInfo.css';
 
 class PeopleInfo extends Component {
+
 	render() {
 		const person = this.props.person;
+		let personName = person.name;
+		let personAge = person.age;
 		let personInfo = null;
 		if (person.editMode) {
 			personInfo = (
@@ -15,8 +18,20 @@ class PeopleInfo extends Component {
 					</div>
 					<div className={'col-sm'}>
 						<div className={'NameContent'}>
-							<p>Name: <input value={person.name} type={'text'}/></p>
-							<p>Age: <input value={person.age} type={'text'}/></p>
+							<p>Name: <input
+								placeholder={person.name}
+								type={'text'}
+								onChange={(event) => (
+									personName = event.target.value
+								)}/>
+							</p>
+							<p>Age: <input
+								placeholder={person.age}
+								type={'text'}
+								onChange={(event) => (
+									personAge = parseInt(event.target.value)
+								)}/>
+							</p>
 							<p>ID: <span>{person.id}</span></p>
 						</div>
 						<Button
@@ -24,7 +39,7 @@ class PeopleInfo extends Component {
 							onClick={() => this.props.cancelButtonClicked(person)}>Cancel</Button>
 						<Button
 							className={"btn btn-success"}
-							onClick={() => this.props.saveButtonClicked(person)}>Save</Button>
+							onClick={() => this.props.saveButtonClicked(person, personName, personAge)}>Save</Button>
 					</div>
 				</div>
 			)

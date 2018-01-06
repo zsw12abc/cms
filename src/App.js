@@ -18,7 +18,15 @@ class App extends Component {
 		this.switchEditModeHandler(p, 'edit');
 	};
 
-	switchEditModeHandler = (p, type) => {
+	cancelButtonHandler = (p) => {
+		this.switchEditModeHandler(p, 'cancel');
+	};
+
+	saveButtonHandler = (p, pName, pAge) => {
+		this.switchEditModeHandler(p, 'save', pName, pAge);
+	};
+
+	switchEditModeHandler = (p, type, pName = null, pAge = null) => {
 		let peopleList = [...this.state.people];
 		let selectedPerson = peopleList.filter(person => {
 			return (person.id === p.id)
@@ -29,6 +37,8 @@ class App extends Component {
 				break;
 			case 'save':
 				selectedPerson.editMode = false;
+				selectedPerson.name = pName;
+				selectedPerson.age = pAge;
 				break;
 			case 'cancel':
 				selectedPerson.editMode = false;
@@ -41,13 +51,6 @@ class App extends Component {
 			people: peopleList
 		});
 		console.log(this.state);
-	};
-	cancelButtonHandler = (p) => {
-		this.switchEditModeHandler(p, 'cancel');
-	};
-	saveButtonHandler = (p) => {
-		this.switchEditModeHandler(p, 'save');
-
 	};
 
 	render() {
