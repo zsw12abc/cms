@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Well} from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 
 import './PeopleInfo.css';
 
@@ -15,31 +15,37 @@ class PeopleInfo extends Component {
 				<div className={'row'}>
 					<div className={'Photo col-sm-4'}>
 						<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
+						<p>ID: <span>{person.id}</span></p>
 					</div>
 					<div className={'col-sm-8'}>
-						<div className={'NameContent'}>
-							<p>Name: <input
+						<div className={'NameContent-Edit'}>
+							<p>Name: <input className={'Input'}
 								placeholder={person.name}
 								type={'text'}
 								onChange={(event) => (
 									personName = event.target.value
 								)}/>
 							</p>
-							<p>Age: <input
-								placeholder={person.age}
-								type={'text'}
-								onChange={(event) => (
+							<p>Age: <input className={'Input'}
+							               placeholder={person.age}
+							               type={'text'}
+							               onChange={(event) => (
 									personAge = parseInt(event.target.value, 10)
 								)}/>
 							</p>
-							<p>ID: <span>{person.id}</span></p>
 						</div>
-						<Button
-							className={"SaveButton btn btn-danger "}
-							onClick={() => this.props.cancelButtonClicked(person)}>Cancel</Button>
-						<Button
-							className={"SaveButton btn btn-success"}
-							onClick={() => this.props.saveButtonClicked(person, personName, personAge)}>Save</Button>
+						<div className={'row justify-content-center'}>
+							<button
+								className={"col-sm btn btn-outline-danger "}
+								onClick={() => this.props.cancelButtonClicked(person)}>
+								<FontAwesome name={'undo'}/>
+							</button>
+							<button
+								className={"col-sm btn btn-outline-success"}
+								onClick={() => this.props.saveButtonClicked(person, personName, personAge)}>
+								<FontAwesome name={'check'}/>
+							</button>
+						</div>
 					</div>
 				</div>
 			)
@@ -47,25 +53,31 @@ class PeopleInfo extends Component {
 		} else {
 			personInfo = (
 				<div className={'row'}>
-					<div className={'Photo col-sm-4'}>
+					<div className={'col-sm-4'}>
 						<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
+						<p>ID: <span>{person.id}</span></p>
 					</div>
 					<div className={'col-sm-8'}>
+						<div className={'row justify-content-end'}>
+							<button
+								className={"EditButton"}
+								onClick={() => this.props.editButtonClicked(person)}>
+								<FontAwesome name={'pencil-square-o'}/>
+							</button>
+						</div>
 						<div className={'NameContent'}>
 							<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
 							<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
 							<p>ID: <span>{person.id}</span></p>
 						</div>
-						<Button
-							className={"btn btn-primary"}
-							onClick={() => this.props.editButtonClicked(person)}>Edit</Button>
 					</div>
-				</div>)
+				</div>
+			)
 		}
 		return (
-			<Well className={'col-sm'}>
+			<div className={'well col-sm WellBox'}>
 				{personInfo}
-			</Well>
+			</div>
 		);
 	}
 }

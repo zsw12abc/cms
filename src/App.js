@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css'
-import reactImg from './img/react.png';
-import pikaImg from './img/pikachu.jpg';
+
 import PeopleList from "./Components/PeopleList/PeopleList";
+import pikaImg from './img/pikachu.jpg';
 
 class App extends Component {
 	state = {
 		people: [
-			{id: 1, name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false},
+			{id: 1, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false},
 			{id: 2, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false},
 			{id: 3, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false},
 		]
@@ -53,22 +53,14 @@ class App extends Component {
 	};
 
 	render() {
-		let displayMode = null;
-		if (this.state.editMode) {
-
-		} else {
-			displayMode = <PeopleList
-				list={this.state.people}
-				editButtonClicked={this.editButtonHandler}
-				cancelButtonClicked={this.cancelButtonHandler}
-				saveButtonClicked={this.saveButtonHandler}
-			/>
-		}
-
-
 		return (
 			<div className={'App'}>
-				{displayMode}
+				<PeopleList
+					list={this.state.people}
+					editButtonClicked={this.editButtonHandler}
+					cancelButtonClicked={this.cancelButtonHandler}
+					saveButtonClicked={this.saveButtonHandler}
+				/>
 			</div>
 		);
 	}
