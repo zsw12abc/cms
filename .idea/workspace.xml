@@ -4,7 +4,9 @@
     <list default="true" id="9be6c819-fd6f-49b8-830c-0450fa59511b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.css" afterPath="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.css" />
       <change beforePath="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.js" afterPath="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.js" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PeopleList/PeopleList.js" afterPath="$PROJECT_DIR$/src/Components/PeopleList/PeopleList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +23,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="282">
+              <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -43,8 +45,8 @@
       <file leaf-file-name="PeopleList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+            <state relative-caret-position="120">
+              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -55,8 +57,8 @@
       <file leaf-file-name="PeopleInfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="333">
+              <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,8 +79,8 @@
       <file leaf-file-name="PeopleInfo.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -123,9 +125,9 @@
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo.js" />
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleList.css" />
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleIndo.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.css" />
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleList.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.js" />
       </list>
     </option>
@@ -269,7 +271,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515067478643</updated>
-      <workItem from="1515067482894" duration="16939000" />
+      <workItem from="1515067482894" duration="17757000" />
     </task>
     <task id="LOCAL-00001" summary="import all the component and test bootstrap css">
       <created>1515070572193</created>
@@ -306,11 +308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515207801795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finish save function">
+      <created>1515209054855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1515209054855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16939000" />
+    <option name="totallyTimeSpent" value="17757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -355,7 +364,8 @@
     <MESSAGE value="add user image and fix the edit button" />
     <MESSAGE value="add peopleList component to handle the people lists" />
     <MESSAGE value="add save and cancel button &#10;and simply the code with switching mode handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="add save and cancel button &#10;and simply the code with switching mode handler" />
+    <MESSAGE value="finish save function" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish save function" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -405,10 +415,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -421,28 +449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="120">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -451,8 +461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/PeopleList/PeopleInfo/PeopleInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="333">
+          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

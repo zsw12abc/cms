@@ -13,10 +13,10 @@ class PeopleInfo extends Component {
 		if (person.editMode) {
 			personInfo = (
 				<div className={'row'}>
-					<div className={'Photo col-sm'}>
+					<div className={'Photo col-sm-4'}>
 						<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
 					</div>
-					<div className={'col-sm'}>
+					<div className={'col-sm-8'}>
 						<div className={'NameContent'}>
 							<p>Name: <input
 								placeholder={person.name}
@@ -29,16 +29,16 @@ class PeopleInfo extends Component {
 								placeholder={person.age}
 								type={'text'}
 								onChange={(event) => (
-									personAge = parseInt(event.target.value)
+									personAge = parseInt(event.target.value, 10)
 								)}/>
 							</p>
 							<p>ID: <span>{person.id}</span></p>
 						</div>
 						<Button
-							className={"btn btn-danger"}
+							className={"SaveButton btn btn-danger "}
 							onClick={() => this.props.cancelButtonClicked(person)}>Cancel</Button>
 						<Button
-							className={"btn btn-success"}
+							className={"SaveButton btn btn-success"}
 							onClick={() => this.props.saveButtonClicked(person, personName, personAge)}>Save</Button>
 					</div>
 				</div>
@@ -47,10 +47,10 @@ class PeopleInfo extends Component {
 		} else {
 			personInfo = (
 				<div className={'row'}>
-					<div className={'Photo col-sm'}>
+					<div className={'Photo col-sm-4'}>
 						<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
 					</div>
-					<div className={'col-sm'}>
+					<div className={'col-sm-8'}>
 						<div className={'NameContent'}>
 							<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
 							<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
@@ -63,7 +63,7 @@ class PeopleInfo extends Component {
 				</div>)
 		}
 		return (
-			<Well className={'WellStyles'}>
+			<Well className={'col-sm'}>
 				{personInfo}
 			</Well>
 		);

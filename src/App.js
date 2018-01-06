@@ -50,7 +50,6 @@ class App extends Component {
 			...this.state,
 			people: peopleList
 		});
-		console.log(this.state);
 	};
 
 	render() {

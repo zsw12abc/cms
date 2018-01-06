@@ -24,3 +24,8 @@
     width: 100px;
     height: 100px;
 }
+
+.SaveButton {
+    margin: 0 5px;
+    font-weight: 100;
+}
