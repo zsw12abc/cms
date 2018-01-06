@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import './App.css'
 
-import PeopleList from "./Components/PeopleList/PeopleList";
+import PeopleList from "./components/PeopleList/PeopleList";
 import reactImg from './img/react.png';
 import pikaImg from './img/pikachu.jpg';
+import NameCardDisplay from "./containers/NameCardDisplay";
 
 class App extends Component {
 	state = {
 		people: [
 			{id: 1, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false},
-			{id: 2, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false},
+			{id: 2, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false},
 			{id: 3, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false},
 			{id: 4, name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false},
-			{id: 5, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false},
+			{id: 5, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false},
 			{id: 6, name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false},
 			{id: 7, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false},
-			{id: 8, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false},
+			{id: 8, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false},
 			{id: 9, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false},
 		]
-
 	};
 
 	editButtonHandler = (p) => {
@@ -71,6 +71,7 @@ class App extends Component {
 						cancelButtonClicked={this.cancelButtonHandler}
 						saveButtonClicked={this.saveButtonHandler}
 					/>
+					<NameCardDisplay/>
 				</div>
 			</div>
 		);
