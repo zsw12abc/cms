@@ -5,9 +5,8 @@ import * as actions from '../store/actions/index';
 
 class NameCardDisplay extends Component {
 	render() {
-		let peopleListClass = this.props.drawer ? 'col-sm-10' : 'col-sm-12';
 		return (
-			<div className={peopleListClass}>
+			<div>
 				<PeopleList
 					list={this.props.people}
 					editButtonClicked={this.props.onEditNameCardCounter}
@@ -22,7 +21,7 @@ class NameCardDisplay extends Component {
 const mapStateToProps = (state) => {
 	return {
 		people: state.nameCardReducer.people,
-		drawer: state.sectionSwitchReducer.drawer
+		// drawer: state.sectionSwitchReducer.drawer
 	}
 };
 
