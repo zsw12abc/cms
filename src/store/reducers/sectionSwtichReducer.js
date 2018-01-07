@@ -17,13 +17,15 @@ const reducer = (state = initialState, action) => {
 				drawer: !state.drawer
 			};
 		case actionTypes.SHOW_DETAIL_NAME_CARD:
-			return showPersonDetailHandler(state, action);
+			return showClientDetailHandler(state, action);
+		case actionTypes.CANCEL_CLIENT_DETAIL:
+			return cancelClientDetailHandler(state, action);
 		default:
 			return state;
 	}
 };
 
-const showPersonDetailHandler = (state, action) => {
+const showClientDetailHandler = (state, action) => {
 	let personSelected = state.clientDetail;
 	personSelected.client = action.client;
 	personSelected.display = true;
@@ -32,6 +34,17 @@ const showPersonDetailHandler = (state, action) => {
 		...state,
 		clientList: false,
 		clientDetail: personSelected
+	}
+};
+
+const cancelClientDetailHandler = (state, action) => {
+	let clientDetail = state.clientDetail;
+	clientDetail.display = false;
+	clientDetail.client = null;
+	return {
+		...state,
+		clientList: true,
+		clientDetail: clientDetail
 	}
 };
 

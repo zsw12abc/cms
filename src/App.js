@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css'
-import NameCardDisplay from "./containers/Clients/ClientCardsDisplay";
+import MainContent from './containers/MainContent'
 import NavigationBar from "./containers/Navigation";
 import Drawer from "./containers/Drawer/Drawer";
 
@@ -11,7 +11,7 @@ class App extends Component {
 				<Drawer/>
 				<div className={'col App'}>
 					<NavigationBar/>
-					<NameCardDisplay/>
+					<MainContent/>
 				</div>
 			</div>
 		);

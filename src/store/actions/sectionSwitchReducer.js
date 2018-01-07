@@ -12,3 +12,9 @@ export const showClientDetail = (client) => {
 		client: client
 	}
 };
+
+export const cancelClientDetail = () => {
+	return {
+		type: actionTypes.CANCEL_CLIENT_DETAIL,
+	}
+};

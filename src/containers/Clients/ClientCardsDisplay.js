@@ -5,25 +5,14 @@ import * as actions from '../../store/actions/index';
 
 class NameCardDisplay extends Component {
 	render() {
-		let peopleList = null;
-
-		if (this.props.clientList) {
-			peopleList = (
-				<PeopleList
-					list={this.props.people}
-					editButtonClicked={this.props.onEditNameCardCounter}
-					cancelButtonClicked={this.props.onCancelNameCardCounter}
-					saveButtonClicked={this.props.onSaveNameCardCounter}
-					detailButtonClicked={this.props.onDetailNameCardCounter}
-				/>
-			)
-		} else {
-			peopleList = null;
-		}
 		return (
-			<div>
-				{peopleList}
-			</div>
+			<PeopleList
+				list={this.props.people}
+				editButtonClicked={this.props.onEditNameCardCounter}
+				cancelButtonClicked={this.props.onCancelNameCardCounter}
+				saveButtonClicked={this.props.onSaveNameCardCounter}
+				detailButtonClicked={this.props.onDetailNameCardCounter}
+			/>
 		);
 	}
 }
@@ -32,7 +21,6 @@ const mapStateToProps = (state) => {
 	return {
 		people: state.nameCardReducer.people,
 		drawer: state.sectionSwitchReducer.drawer,
-		clientList: state.sectionSwitchReducer.clientList
 	}
 };
 
