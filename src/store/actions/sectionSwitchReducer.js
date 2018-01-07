@@ -6,9 +6,9 @@ export const drawerOpen = () => {
 	}
 };
 
-export const showPersonDetail = (person) => {
+export const showClientDetail = (client) => {
 	return {
 		type: actionTypes.SHOW_DETAIL_NAME_CARD,
-		person: person
+		client: client
 	}
 };

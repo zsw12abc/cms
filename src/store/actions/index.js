@@ -7,5 +7,5 @@ export {
 
 export {
 	drawerOpen,
-	showPersonDetail
+	showClientDetail
 } from './sectionSwitchReducer';

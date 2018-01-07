@@ -2,9 +2,9 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
 	drawer: false,
-	peopleList: true,
-	personDetail: {
-		person: null,
+	clientList: true,
+	clientDetail: {
+		client: null,
 		display: false
 	}
 };
@@ -24,14 +24,14 @@ const reducer = (state = initialState, action) => {
 };
 
 const showPersonDetailHandler = (state, action) => {
-	let personSelected = state.personDetail;
-	personSelected.person = action.person;
+	let personSelected = state.clientDetail;
+	personSelected.client = action.client;
 	personSelected.display = true;
 	console.log(personSelected);
 	return {
 		...state,
-		peopleList: false,
-		personDetail: personSelected
+		clientList: false,
+		clientDetail: personSelected
 	}
 };
 

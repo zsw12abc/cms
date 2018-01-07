@@ -47,7 +47,7 @@ const saveButtonHandler = (state, action) => {
 const switchEditModeHandler = (state, action, type) => {
 	let peopleList = [...state.people];
 	let selectedList = peopleList.filter(person => {
-		return (person.id === action.person.id)
+		return (person.id === action.client.id)
 	});
 	let person;
 	let selectedPerson = null;

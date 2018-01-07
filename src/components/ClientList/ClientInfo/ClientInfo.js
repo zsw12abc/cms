@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
 
-import './PeopleInfo.css';
+import './ClientInfo.css';
 
-class PeopleInfo extends Component {
+class ClientInfo extends Component {
 
 	render() {
 		const person = this.props.person;
@@ -89,4 +89,4 @@ class PeopleInfo extends Component {
 }
 
 
-export default PeopleInfo;
+export default ClientInfo;

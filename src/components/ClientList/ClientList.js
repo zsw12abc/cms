@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './PeopleList.css';
-import PeopleInfo from "./PeopleInfo/PeopleInfo";
+import './ClientList.css';
+import ClientInfo from "./ClientInfo/ClientInfo";
 
 class PeopleList extends Component {
 	render() {
@@ -10,7 +10,7 @@ class PeopleList extends Component {
 				{
 					peopleList.map(person => {
 						let peopleCell = (
-							<PeopleInfo
+							<ClientInfo
 								key={person.id}
 								person={person}
 								editButtonClicked={this.props.editButtonClicked}

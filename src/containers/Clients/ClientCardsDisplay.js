@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PeopleList from '../../components/PeopleList/PeopleList';
+import PeopleList from '../../components/ClientList/ClientList';
 import * as actions from '../../store/actions/index';
 
 class NameCardDisplay extends Component {
 	render() {
 		let peopleList = null;
 
-		if (this.props.peopleList) {
+		if (this.props.clientList) {
 			peopleList = (
 				<PeopleList
 					list={this.props.people}
@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 	return {
 		people: state.nameCardReducer.people,
 		drawer: state.sectionSwitchReducer.drawer,
-		peopleList: state.sectionSwitchReducer.peopleList
+		clientList: state.sectionSwitchReducer.clientList
 	}
 };
 
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
 		onEditNameCardCounter: (person) => dispatch(actions.editNameCard(person)),
 		onSaveNameCardCounter: (person, pName, pAge) => dispatch(actions.saveNameCard(person, pName, pAge)),
 		onCancelNameCardCounter: (person) => dispatch(actions.cancelNameCard(person)),
-		onDetailNameCardCounter: (person) => dispatch(actions.showPersonDetail(person))
+		onDetailNameCardCounter: (person) => dispatch(actions.showClientDetail(person))
 	}
 
 };
