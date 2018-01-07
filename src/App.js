@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css'
 import NameCardDisplay from "./containers/NameCardDisplay";
-import NavigationBar from "./containers/NavigationBar";
+import NavigationBar from "./containers/Navigation";
 
 class App extends Component {
 	render() {
