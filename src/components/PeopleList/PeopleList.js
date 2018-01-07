@@ -6,7 +6,7 @@ class PeopleList extends Component {
 	render() {
 		const peopleList = this.props.list;
 		return (
-			<div className={'row'}>
+			<div className={'row PeopleList'}>
 				{
 					peopleList.map(person => {
 						let peopleCell = (
