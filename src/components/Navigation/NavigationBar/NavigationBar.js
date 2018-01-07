@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
+import FontAwesome from 'react-fontawesome';
 import './NavigationBar.css'
 
 class NavigationBar extends Component {
 	render() {
 		let searchName = null;
 		return (
-			<nav className={'navbar navbar-light bg-light justify-content-between fixed-top NavigationBar'}>
-				<a className={'navbar-brand mb-0 h1'}>Client Manager System</a>
-				<div className={'form-inline my-2 my-lg-0'}>
+			<nav className={'navbar navbar-light bg-light fixed-top NavigationBar'}>
+				<button className={"navbar-toggler hidden-lg-up"} data-toggle="drawer" data-target={"#my-drawer"}
+				        type="button">
+					<FontAwesome name={'bars'}/>
+				</button>
+				<a className={'navbar-brand mb-0 h1 NavigationBand'}>Client Manager System</a>
+				<div className={'form-inline my-2 my-lg-0 SearchBox'}>
 					<input className={"form-control mr-sm-2"}
 					       type="search"
 					       placeholder={"Search"}

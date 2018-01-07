@@ -78,6 +78,9 @@ const switchEditModeHandler = (state, action, type) => {
 const searchButtonHandler = (state, action) => {
 	let peopleList = [...state.people];
 	let notSelectedList = peopleList.filter(person => {
+		if (action.name === null) {
+			return null;
+		}
 		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) === -1);
 	});
 	let notIncludedPerson;
@@ -85,6 +88,7 @@ const searchButtonHandler = (state, action) => {
 		notSelectedList[notIncludedPerson].display = false;
 	}
 	let selectedList = peopleList.filter(person => {
+		if (action.name === null) return peopleList;
 		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) !== -1);
 	});
 	let includedPerson;
