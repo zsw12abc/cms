@@ -7,8 +7,7 @@ class NavigationBar extends Component {
 		let searchName = null;
 		return (
 			<nav className={'navbar navbar-light bg-light fixed-top NavigationBar'}>
-				<button className={"navbar-toggler hidden-lg-up"} data-toggle="drawer" data-target={"#my-drawer"}
-				        type="button">
+				<button className={"navbar-toggler"} onClick={this.props.menuButtonClicked}>
 					<FontAwesome name={'bars'}/>
 				</button>
 				<a className={'navbar-brand mb-0 h1 NavigationBand'}>Client Manager System</a>

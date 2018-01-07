@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import NameCardDisplay from "./containers/NameCardDisplay";
 import NavigationBar from "./containers/Navigation";
+import Drawer from "./containers/Drawer";
 
 class App extends Component {
 	render() {
@@ -9,11 +10,8 @@ class App extends Component {
 			<div>
 				<NavigationBar/>
 				<div className={'row App'}>
-					<div className={'col-sm-2'}>
-					</div>
-					<div className={'col-sm-10 MainArea'}>
-						<NameCardDisplay/>
-					</div>
+					<Drawer/>
+					<NameCardDisplay/>
 				</div>
 			</div>
 		);

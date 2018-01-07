@@ -5,20 +5,24 @@ import * as actions from '../store/actions/index';
 
 class NameCardDisplay extends Component {
 	render() {
+		let peopleListClass = this.props.drawer ? 'col-sm-10' : 'col-sm-12';
 		return (
-			<PeopleList
-				list={this.props.people}
-				editButtonClicked={this.props.onEditNameCardCounter}
-				cancelButtonClicked={this.props.onCancelNameCardCounter}
-				saveButtonClicked={this.props.onSaveNameCardCounter}
-			/>
+			<div className={peopleListClass}>
+				<PeopleList
+					list={this.props.people}
+					editButtonClicked={this.props.onEditNameCardCounter}
+					cancelButtonClicked={this.props.onCancelNameCardCounter}
+					saveButtonClicked={this.props.onSaveNameCardCounter}
+				/>
+			</div>
 		);
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		people: state.nameCardReducer.people
+		people: state.nameCardReducer.people,
+		drawer: state.sectionSwitchReducer.drawer
 	}
 };
 

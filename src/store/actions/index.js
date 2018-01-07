@@ -2,5 +2,9 @@ export {
 	saveNameCard,
 	editNameCard,
 	cancelNameCard,
-	searchNameCard
+	searchNameCard,
 } from './nameCardReducer';
+
+export {
+	drawerOpen
+} from './sectionSwitchReducer';
