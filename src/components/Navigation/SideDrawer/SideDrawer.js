@@ -4,7 +4,7 @@ import './SideDrawer.css';
 class SideDrawer extends Component {
 	render() {
 		return (
-			<div className={"bmd-layout-drawer bg-faded"}>
+			<div className={"bmd-layout-drawer bg-faded SideDrawer"}>
 				<header>
 					<a className={"navbar-brand"}>Clients List</a>
 				</header>

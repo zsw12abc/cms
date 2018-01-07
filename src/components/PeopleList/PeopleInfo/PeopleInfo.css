@@ -55,3 +55,15 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
+
+.Detail {
+    margin-bottom: 0;
+    border-style: none;
+    background: transparent;
+    font-size: 0.2em;
+    color: #b3b3b3;
+}
+
+.More {
+    margin-left: 0.5em;
+}

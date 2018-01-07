@@ -16,6 +16,7 @@ class PeopleList extends Component {
 								editButtonClicked={this.props.editButtonClicked}
 								cancelButtonClicked={this.props.cancelButtonClicked}
 								saveButtonClicked={this.props.saveButtonClicked}
+								detailButtonClicked={this.props.detailButtonClicked}
 							/>
 						);
 						if (!person.display) {

@@ -6,5 +6,6 @@ export {
 } from './nameCardReducer';
 
 export {
-	drawerOpen
+	drawerOpen,
+	showPersonDetail
 } from './sectionSwitchReducer';

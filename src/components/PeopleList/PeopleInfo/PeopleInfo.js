@@ -51,23 +51,31 @@ class PeopleInfo extends Component {
 			)
 		} else {
 			personInfo = (
-				<div className={'row'}>
-					<div className={'col-sm-4'}>
-						<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
-						<p>ID: <span>{person.id}</span></p>
+				<div>
+					<div className={'row'}>
+						<div className={'col-sm-4'}>
+							<img className={'Avatar'} src={person.imageUrl} alt={'Avatar'}/>
+							<p>ID: <span>{person.id}</span></p>
+						</div>
+						<div className={'col-sm-8'}>
+							<div className={'row justify-content-end'}>
+								<button
+									className={"EditButton"}
+									onClick={() => this.props.editButtonClicked(person)}>
+									<FontAwesome name={'pencil-square-o'}/>
+								</button>
+							</div>
+							<div className={'NameContent'}>
+								<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
+								<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
+							</div>
+						</div>
 					</div>
-					<div className={'col-sm-8'}>
-						<div className={'row justify-content-end'}>
-							<button
-								className={"EditButton"}
-								onClick={() => this.props.editButtonClicked(person)}>
-								<FontAwesome name={'pencil-square-o'}/>
-							</button>
-						</div>
-						<div className={'NameContent'}>
-							<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
-							<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
-						</div>
+					<div className={'row justify-content-end'}>
+						<button className={'Detail'} onClick={() => this.props.detailButtonClicked(person)}>
+							<FontAwesome name={'address-book'}/>
+							<span className={'More'}>more</span>
+						</button>
 					</div>
 				</div>
 			)

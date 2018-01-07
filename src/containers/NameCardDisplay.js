@@ -12,6 +12,7 @@ class NameCardDisplay extends Component {
 					editButtonClicked={this.props.onEditNameCardCounter}
 					cancelButtonClicked={this.props.onCancelNameCardCounter}
 					saveButtonClicked={this.props.onSaveNameCardCounter}
+					detailButtonClicked={this.props.onDetailNameCardCounter}
 				/>
 			</div>
 		);
@@ -21,7 +22,7 @@ class NameCardDisplay extends Component {
 const mapStateToProps = (state) => {
 	return {
 		people: state.nameCardReducer.people,
-		// drawer: state.sectionSwitchReducer.drawer
+		drawer: state.sectionSwitchReducer.drawer
 	}
 };
 
@@ -30,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 		onEditNameCardCounter: (person) => dispatch(actions.editNameCard(person)),
 		onSaveNameCardCounter: (person, pName, pAge) => dispatch(actions.saveNameCard(person, pName, pAge)),
 		onCancelNameCardCounter: (person) => dispatch(actions.cancelNameCard(person)),
+		onDetailNameCardCounter: (person) => dispatch(actions.showPersonDetail(person))
 	}
 
 };
