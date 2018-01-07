@@ -4,7 +4,7 @@ import './NavigationBar.css'
 
 class NavigationBar extends Component {
 	render() {
-		let searchName = null;
+		let searchInput = null;
 		return (
 			<nav className={'navbar navbar-light bg-light NavigationBar'}>
 				<button className={"navbar-toggler"} onClick={this.props.menuButtonClicked}>
@@ -14,15 +14,15 @@ class NavigationBar extends Component {
 				<div className={'form-inline my-2 my-lg-0 SearchBox'}>
 					<input className={"form-control mr-sm-2"}
 					       type="search"
-					       placeholder={"Search"}
+					       placeholder={"Enter Name or ID"}
 					       onChange={(event) => {
-						       searchName = event.target.value;
-						       this.props.searchButtonClicked(searchName);
+						       searchInput = event.target.value;
+						       this.props.searchButtonClicked(searchInput);
 					       }}
 					       aria-label="Search"
 					/>
 					<button className={"btn btn-outline-primary my-2 my-sm-0"}
-					        onClick={() => this.props.searchButtonClicked(searchName)}
+					        onClick={() => this.props.searchButtonClicked(searchInput)}
 					        type="submit">Search
 					</button>
 				</div>

@@ -30,6 +30,7 @@ const showPersonDetailHandler = (state, action) => {
 	console.log(personSelected);
 	return {
 		...state,
+		peopleList: false,
 		personDetail: personSelected
 	}
 };

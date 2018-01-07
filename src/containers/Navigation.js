@@ -23,7 +23,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onSearchNameCardCounter: (name) => dispatch(actions.searchNameCard(name)),
+		onSearchNameCardCounter: (input) => dispatch(actions.searchNameCard(input)),
 		onMenuButtonCounter: () => dispatch(actions.drawerOpen()),
 	}
 };

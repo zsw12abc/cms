@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PeopleList from '../components/PeopleList/PeopleList';
-import * as actions from '../store/actions/index';
+import PeopleList from '../../components/PeopleList/PeopleList';
+import * as actions from '../../store/actions/index';
 
 class NameCardDisplay extends Component {
 	render() {
-		return (
-			<div>
+		let peopleList = null;
+
+		if (this.props.peopleList) {
+			peopleList = (
 				<PeopleList
 					list={this.props.people}
 					editButtonClicked={this.props.onEditNameCardCounter}
@@ -14,6 +16,13 @@ class NameCardDisplay extends Component {
 					saveButtonClicked={this.props.onSaveNameCardCounter}
 					detailButtonClicked={this.props.onDetailNameCardCounter}
 				/>
+			)
+		} else {
+			peopleList = null;
+		}
+		return (
+			<div>
+				{peopleList}
 			</div>
 		);
 	}
@@ -22,7 +31,8 @@ class NameCardDisplay extends Component {
 const mapStateToProps = (state) => {
 	return {
 		people: state.nameCardReducer.people,
-		drawer: state.sectionSwitchReducer.drawer
+		drawer: state.sectionSwitchReducer.drawer,
+		peopleList: state.sectionSwitchReducer.peopleList
 	}
 };
 

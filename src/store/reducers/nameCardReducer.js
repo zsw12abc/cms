@@ -4,15 +4,15 @@ import pikaImg from '../../img/pikachu.jpg';
 
 const initialState = {
 	people: [
-		{id: 1, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
-		{id: 2, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
-		{id: 3, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
-		{id: 4, name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false, display: true},
-		{id: 5, name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false, display: true},
-		{id: 6, name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false, display: true},
-		{id: 7, name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
-		{id: 8, name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
-		{id: 9, name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
+		{id: '1', name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
+		{id: '2', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
+		{id: '3', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
+		{id: '4', name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false, display: true},
+		{id: '5', name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false, display: true},
+		{id: '6', name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false, display: true},
+		{id: '7', name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
+		{id: '8', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
+		{id: '9', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
 	]
 };
 
@@ -78,18 +78,26 @@ const switchEditModeHandler = (state, action, type) => {
 const searchButtonHandler = (state, action) => {
 	let peopleList = [...state.people];
 	let notSelectedList = peopleList.filter(person => {
-		if (action.name === null) {
+		if (action.input === null) {
 			return null;
 		}
-		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) === -1);
+		if (isNaN(action.input)) {
+			return (person.name.toLowerCase().indexOf(action.input.toLowerCase()) === -1);
+		} else {
+			return (person.id.indexOf(action.input) === -1)
+		}
 	});
 	let notIncludedPerson;
 	for (notIncludedPerson in notSelectedList) {
 		notSelectedList[notIncludedPerson].display = false;
 	}
 	let selectedList = peopleList.filter(person => {
-		if (action.name === null) return peopleList;
-		return (person.name.toLowerCase().indexOf(action.name.toLowerCase()) !== -1);
+		if (action.input === null) return peopleList;
+		if (isNaN(action.input)) {
+			return (person.name.toLowerCase().indexOf(action.input.toLowerCase()) !== -1);
+		} else {
+			return (person.id.indexOf(action.input) !== -1)
+		}
 	});
 	let includedPerson;
 	for (includedPerson in selectedList) {

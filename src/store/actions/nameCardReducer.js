@@ -21,9 +21,9 @@ export const cancelNameCard = (person) => {
 	}
 };
 
-export const searchNameCard = (name) => {
+export const searchNameCard = (input) => {
 	return {
 		type: actionTypes.SEARCH_NAME_CARD,
-		name: name
+		input: input
 	}
 };
