@@ -36,7 +36,7 @@ class ClientInfo extends Component {
 						</div>
 						<div className={'row justify-content-center'}>
 							<button
-								className={"col-sm btn btn-outline-danger "}
+								className={"col-sm btn btn-outline-info "}
 								onClick={() => this.props.cancelButtonClicked(person)}>
 								<FontAwesome name={'undo'}/>
 							</button>

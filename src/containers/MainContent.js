@@ -7,6 +7,8 @@ import ClientDetailDisplay from './Clients/ClientDetail/ClientDetailDisplay';
 class MainContent extends Component {
 	render() {
 		let mainContent = null;
+		let styles = this.props.drawer ?
+			'col-12 col-md-9 col-xl-10 bd-content' : 'col-12 col-md-12 col-xl-12 bd-content';
 		if (this.props.clientList) {
 			mainContent = (
 				<ClientCardsDisplay/>
@@ -18,7 +20,7 @@ class MainContent extends Component {
 			)
 		}
 		return (
-			<div className={'bd-content'}>
+			<div className={styles}>
 				{mainContent}
 			</div>
 		);
@@ -28,7 +30,8 @@ class MainContent extends Component {
 const mapStateToProps = (state) => {
 	return {
 		clientList: state.sectionSwitchReducer.clientList,
-		clientDetail: state.sectionSwitchReducer.clientDetail
+		clientDetail: state.sectionSwitchReducer.clientDetail,
+		drawer: state.sectionSwitchReducer.drawer
 	};
 };
 
