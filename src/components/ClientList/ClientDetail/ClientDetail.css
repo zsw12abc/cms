@@ -28,11 +28,9 @@
 }
 
 .Info {
-    /*text-align: left;*/
     display: flex;
     justify-content: space-between;
 }
 
 .Detail {
-    /*text-align: right;*/
 }
