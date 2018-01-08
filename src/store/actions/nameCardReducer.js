@@ -28,3 +28,10 @@ export const searchNameCard = (input) => {
 		input: input
 	}
 };
+
+export const deleteClientDetail = (person) => {
+	return {
+		type: actionTypes.DELETE_CLIENT_DETAIL,
+		person: person
+	}
+};

@@ -19,37 +19,43 @@ class ClientInfo extends Component {
 						<p>ID: <span>{person.id}</span></p>
 					</div>
 					<div className={'col-sm-8'}>
-						<div className={'NameContent-Edit'}>
-							<p>Name: <input className={'Input'}
-							                placeholder={person.name}
-							                type={'text'}
-							                onChange={(event) => (
-								                personName = event.target.value
-							                )}/>
-							</p>
-							<p>Age: <input className={'Input'}
-							               placeholder={person.age}
-							               type={'text'}
-							               onChange={(event) => (
-								               personAge = parseInt(event.target.value, 10)
-							               )}/>
-							</p>
-							<p>Mobile : <input className={'Input'}
-							                   placeholder={person.mobile}
-							                   type={'text'}
-							                   onChange={(event) => (
-								                   personNum = event.target.value
-							                   )}/>
-							</p>
+						<div className={'NameContent-Edit container-fluid'}>
+							<div className={'Info'}>
+								<span>Name:</span>
+								<input className={'Input'}
+								       placeholder={person.name}
+								       type={'text'}
+								       onChange={(event) => (
+									       personName = event.target.value
+								       )}/>
+							</div>
+							<div className={'Info'}>
+								<span>Age:</span>
+								<input className={'Input'}
+								       placeholder={person.age}
+								       type={'text'}
+								       onChange={(event) => (
+									       personAge = parseInt(event.target.value, 10)
+								       )}/>
+							</div>
+							<div className={'Info'}>
+								<span>Mobile:</span>
+								<input className={'Input'}
+								       placeholder={person.mobile}
+								       type={'text'}
+								       onChange={(event) => (
+									       personNum = event.target.value
+								       )}/>
+							</div>
 						</div>
-						<div className={'row justify-content-center'}>
+						<div className={'row ButtonGroup'}>
 							<button
-								className={"col-sm btn btn-outline-info "}
+								className={"col-sm-4 btn btn-outline-info "}
 								onClick={() => this.props.cancelButtonClicked(person)}>
 								<FontAwesome name={'undo'}/>
 							</button>
 							<button
-								className={"col-sm btn btn-outline-success"}
+								className={"col-sm-4 btn btn-outline-success"}
 								onClick={() => this.props.saveButtonClicked(person, personName, personAge, personNum)}>
 								<FontAwesome name={'check'}/>
 							</button>

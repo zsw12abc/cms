@@ -85,6 +85,8 @@ const reducer = (state = initialState, action) => {
 			return cancelButtonHandler(state, action);
 		case actionTypes.SEARCH_NAME_CARD:
 			return searchButtonHandler(state, action);
+		case actionTypes.DELETE_CLIENT_DETAIL:
+			return deleteClientDetailHandler(state, action);
 		default:
 			return state
 	}
@@ -167,6 +169,19 @@ const searchButtonHandler = (state, action) => {
 		...state,
 		people: peopleList
 	})
+};
+
+const deleteClientDetailHandler = (state, action) => {
+	let peopleList = [...state.people];
+	let newList = peopleList.filter(person => {
+		return (person.id !== action.person.id)
+	});
+	console.log(newList);
+	return ({
+		...state,
+		people: newList
+	})
+
 };
 
 export default reducer;

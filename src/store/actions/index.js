@@ -3,10 +3,11 @@ export {
 	editNameCard,
 	cancelNameCard,
 	searchNameCard,
+	deleteClientDetail,
 } from './nameCardReducer';
 
 export {
 	drawerOpen,
 	showClientDetail,
-	cancelClientDetail
+	cancelClientDetail,
 } from './sectionSwitchReducer';

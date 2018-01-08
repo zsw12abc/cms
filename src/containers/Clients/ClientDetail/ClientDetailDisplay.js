@@ -9,7 +9,8 @@ class ClientDetailDisplay extends Component {
 			<ClientDetail
 				clientDetail={this.props.clientDetail}
 				clientList={this.props.clientList}
-				cancelButtonClicked={this.props.onCancelNameDetailCounter}
+				cancelButtonClicked={this.props.onCancelClientDetailCounter}
+				deleteButtonClicked={this.props.onDeleteClientDetailCounter}
 			/>
 		);
 	}
@@ -25,7 +26,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onCancelNameDetailCounter: () => dispatch(actions.cancelClientDetail()),
+		onCancelClientDetailCounter: () => dispatch(actions.cancelClientDetail()),
+		onDeleteClientDetailCounter: (client) => dispatch(actions.deleteClientDetail(client))
 	}
 };
 
