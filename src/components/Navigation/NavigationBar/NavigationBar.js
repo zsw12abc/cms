@@ -6,7 +6,7 @@ class NavigationBar extends Component {
 	render() {
 		let searchInput = null;
 		return (
-			<nav className={'navbar navbar-light bg-light NavigationBar'}>
+			<nav className={'navbar navbar-light bg-light bd-navbar'}>
 				<button className={"navbar-toggler"} onClick={this.props.menuButtonClicked}>
 					<FontAwesome name={'bars'}/>
 				</button>

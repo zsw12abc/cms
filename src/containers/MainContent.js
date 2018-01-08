@@ -18,7 +18,7 @@ class MainContent extends Component {
 			)
 		}
 		return (
-			<div>
+			<div className={'bd-content'}>
 				{mainContent}
 			</div>
 		);

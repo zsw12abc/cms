@@ -7,11 +7,13 @@ import Drawer from "./containers/Drawer/Drawer";
 class App extends Component {
 	render() {
 		return (
-			<div className={'row'}>
-				<Drawer/>
-				<div className={'col App'}>
-					<NavigationBar/>
-					<MainContent/>
+			<div>
+				<header><NavigationBar/></header>
+				<div className={'container-fluid'}>
+					<div className={'row flex-xl-nowrap'}>
+						<Drawer/>
+						<MainContent/>
+					</div>
 				</div>
 			</div>
 		);

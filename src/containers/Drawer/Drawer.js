@@ -6,7 +6,7 @@ import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 class Drawer extends Component {
 	render() {
 		let sideDrawerSection = null;
-		let sideClassName = this.props.drawer ? 'col-sm-2 Drawer' : 'Drawer';
+		let sideClassName = this.props.drawer ? 'col-12 col-md-3 col-xl-2 bd-sidebar Drawer' : '';
 		if (this.props.drawer) {
 			sideDrawerSection = (
 				<SideDrawer/>
