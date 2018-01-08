@@ -9,6 +9,7 @@ class ClientInfo extends Component {
 		const person = this.props.person;
 		let personName = person.name;
 		let personAge = person.age;
+		let personNum = person.mobile;
 		let personInfo = null;
 		if (person.editMode) {
 			personInfo = (
@@ -33,6 +34,13 @@ class ClientInfo extends Component {
 								               personAge = parseInt(event.target.value, 10)
 							               )}/>
 							</p>
+							<p>Mobile : <input className={'Input'}
+							                   placeholder={person.mobile}
+							                   type={'text'}
+							                   onChange={(event) => (
+								                   personNum = event.target.value
+							                   )}/>
+							</p>
 						</div>
 						<div className={'row justify-content-center'}>
 							<button
@@ -42,7 +50,7 @@ class ClientInfo extends Component {
 							</button>
 							<button
 								className={"col-sm btn btn-outline-success"}
-								onClick={() => this.props.saveButtonClicked(person, personName, personAge)}>
+								onClick={() => this.props.saveButtonClicked(person, personName, personAge, personNum)}>
 								<FontAwesome name={'check'}/>
 							</button>
 						</div>
@@ -68,6 +76,7 @@ class ClientInfo extends Component {
 							<div className={'NameContent'}>
 								<p>Name: <span className={'NameSpan'}>{person.name}</span></p>
 								<p>Age: <span className={'AgeSpan'}>{person.age}</span></p>
+								<p>Mobile: <span className={'AgeSpan'}>{person.mobile}</span></p>
 							</div>
 						</div>
 					</div>

@@ -28,19 +28,19 @@ class ClientDetail extends Component {
 						</div>
 						<div className={'Info'}>
 							<p className={'Tag'}>Telephone:</p>
-							<p className={'TagContent'}>*******</p>
+							<p className={'TagContent'}>{client.phone}</p>
 						</div>
 						<div className={'Info'}>
 							<p className={'Tag'}>Mobile:</p>
-							<p className={'TagContent'}>*******</p>
+							<p className={'TagContent'}>{client.mobile}</p>
 						</div>
 						<div className={'Info'}>
 							<p className={'Tag'}>Address:</p>
-							<p className={'TagContent'}>*******</p>
+							<p className={'TagContent'}>{client.address}</p>
 						</div>
 						<div className={'Info'}>
 							<p className={'Tag'}>Company:</p>
-							<p className={'TagContent'}>*******</p>
+							<p className={'TagContent'}>{client.company}</p>
 						</div>
 						<button
 							className={"col-sm-4 btn btn-outline-danger "}

@@ -4,15 +4,74 @@ import pikaImg from '../../img/pikachu.jpg';
 
 const initialState = {
 	people: [
-		{id: '1', name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
-		{id: '2', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
-		{id: '3', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
-		{id: '4', name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false, display: true},
-		{id: '5', name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false, display: true},
-		{id: '6', name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false, display: true},
-		{id: '7', name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true},
-		{id: '8', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true},
-		{id: '9', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true},
+		{
+			id: '1',
+			name: 'Shaowei',
+			age: 25,
+			imageUrl: pikaImg,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+			editMode: false,
+			display: true
+		},
+		{
+			id: '2', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '3', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '4', name: 'Shaowei', age: 25, imageUrl: reactImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '5', name: 'Kira', age: 22, imageUrl: pikaImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '6', name: 'ZSW', age: 18, imageUrl: reactImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '7', name: 'Shaowei', age: 25, imageUrl: pikaImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '8', name: 'Kira', age: 22, imageUrl: reactImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
+		{
+			id: '9', name: 'ZSW', age: 18, imageUrl: pikaImg, editMode: false, display: true,
+			address: 'Melbourne, VIC, 3000',
+			phone: '390000000',
+			mobile: '0400000000',
+			company: 'Microsoft',
+		},
 	]
 };
 
@@ -62,6 +121,7 @@ const switchEditModeHandler = (state, action, type) => {
 			selectedPerson.editMode = false;
 			selectedPerson.name = action.name;
 			selectedPerson.age = action.age;
+			selectedPerson.mobile = action.mobile;
 			break;
 		case 'cancel':
 			selectedPerson.editMode = false;

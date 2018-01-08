@@ -6,12 +6,13 @@ export const editNameCard = (person) => {
 		client: person
 	}
 };
-export const saveNameCard = (person, pName, pAge) => {
+export const saveNameCard = (person, pName, pAge, pMobile) => {
 	return {
 		type: actionTypes.SAVE_NAME_CARD,
 		client: person,
 		name: pName,
-		age: pAge
+		age: pAge,
+		mobile: pMobile
 	}
 };
 export const cancelNameCard = (person) => {

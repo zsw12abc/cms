@@ -27,7 +27,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onEditNameCardCounter: (person) => dispatch(actions.editNameCard(person)),
-		onSaveNameCardCounter: (person, pName, pAge) => dispatch(actions.saveNameCard(person, pName, pAge)),
+		onSaveNameCardCounter: (person, pName, pAge, pMobile) => dispatch(actions.saveNameCard(person, pName, pAge, pMobile)),
 		onCancelNameCardCounter: (person) => dispatch(actions.cancelNameCard(person)),
 		onDetailNameCardCounter: (person) => dispatch(actions.showClientDetail(person))
 	}
