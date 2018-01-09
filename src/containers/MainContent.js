@@ -3,7 +3,11 @@ import {connect} from 'react-redux';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import ClientCardsDisplay from './Clients/ClientCardsDisplay';
 import ClientDetailDisplay from './Clients/ClientDetail/ClientDetailDisplay';
+import asyncComponent from '../hoc/asyncComponent';
 
+const AsyncClientDetail = asyncComponent(() => {
+	return import('./Clients/ClientDetail/ClientDetailDisplay');
+});
 
 class MainContent extends Component {
 	render() {
@@ -24,7 +28,7 @@ class MainContent extends Component {
 			<div className={styles}>
 				{/*{mainContent}*/}
 				<Switch>
-					<Route path={'/Client/:id'} exact component={ClientDetailDisplay}/>
+					<Route path={'/Client/:id'} exact component={AsyncClientDetail}/>
 					<Route path={'/'} exact component={ClientCardsDisplay}/>
 					<Redirect from={'/Client'} to={'/'}/>
 					<Route render={() => <h1>404 Pages Not Found</h1>}/>
