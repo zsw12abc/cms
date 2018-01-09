@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import ClientCardsDisplay from './Clients/ClientCardsDisplay';
-import ClientDetailDisplay from './Clients/ClientDetail/ClientDetailDisplay';
 import asyncComponent from '../hoc/asyncComponent';
 
 const AsyncClientDetail = asyncComponent(() => {
@@ -14,22 +13,22 @@ class MainContent extends Component {
 		let mainContent = null;
 		let styles = this.props.drawer ?
 			'col-12 col-md-9 col-xl-10 bd-content' : 'col-12 col-md-12 col-xl-12 bd-content';
-		if (this.props.clientList) {
-			mainContent = (
-				<ClientCardsDisplay/>
-			)
-		}
-		if (this.props.clientDetail.display) {
-			mainContent = (
-				<ClientDetailDisplay/>
-			)
-		}
+		// if (this.props.clientList) {
+		// 	mainContent = (
+		// 		<ClientCardsDisplay/>
+		// 	)
+		// }
+		// if (this.props.clientDetail.display) {
+		// 	mainContent = (
+		// 		<ClientDetailDisplay/>
+		// 	)
+		// }
 		return (
 			<div className={styles}>
 				{/*{mainContent}*/}
 				<Switch>
-					<Route path={'/Client/:id'} exact component={AsyncClientDetail}/>
 					<Route path={'/'} exact component={ClientCardsDisplay}/>
+					<Route path={'/Client/:id'} exact component={AsyncClientDetail}/>
 					<Redirect from={'/Client'} to={'/'}/>
 					<Route render={() => <h1>404 Pages Not Found</h1>}/>
 				</Switch>

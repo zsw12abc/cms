@@ -5,11 +5,24 @@ import * as actions from '../../../store/actions/index'
 
 class ClientDetailDisplay extends Component {
 	render() {
+		console.log(this.props);
+		let selectedPerson = null;
+		if (this.props.match.params.id) {
+			selectedPerson = this.props.clientDatabase.filter(person => {
+				return person.id === this.props.match.params.id;
+			})[0];
+		} else {
+			selectedPerson = this.props.clientDetail;
+		}
+		console.log(selectedPerson);
 		return (
 			<ClientDetail
-				clientDetail={this.props.clientDetail}
-				clientList={this.props.clientList}
-				cancelButtonClicked={this.props.onCancelClientDetailCounter}
+				clientDetail={selectedPerson}
+				// cancelButtonClicked={this.props.onCancelClientDetailCounter}
+				cancelButtonClicked={() => {
+					this.props.history.push('/');
+					this.props.onCancelClientDetailCounter()
+				}}
 				deleteButtonClicked={this.props.onDeleteClientDetailCounter}
 			/>
 		);
@@ -19,8 +32,8 @@ class ClientDetailDisplay extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		clientList: state.sectionSwitchReducer.clientList,
-		clientDetail: state.sectionSwitchReducer.clientDetail
+		clientDetail: state.sectionSwitchReducer.clientDetail,
+		clientDatabase: state.nameCardReducer.people
 	}
 };
 

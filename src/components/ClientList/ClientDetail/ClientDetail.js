@@ -6,9 +6,7 @@ import './ClientDetail.css'
 
 class ClientDetail extends Component {
 	render() {
-		console.log(this.props);
-		const clientDetail = this.props.clientDetail;
-		const client = clientDetail.client;
+		const client = this.props.clientDetail;
 		return (
 			<div className={'ClientDetail container-fluid'}>
 				<div className={'row'}>

@@ -2,11 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
 	drawer: false,
-	clientList: true,
-	clientDetail: {
-		client: null,
-		display: false
-	}
+	clientDetail: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -26,25 +22,16 @@ const reducer = (state = initialState, action) => {
 };
 
 const showClientDetailHandler = (state, action) => {
-	let personSelected = state.clientDetail;
-	personSelected.client = action.client;
-	personSelected.display = true;
-	console.log(personSelected);
 	return {
 		...state,
-		clientList: false,
-		clientDetail: personSelected
+		clientDetail: action.client
 	}
 };
 
 const cancelClientDetailHandler = (state, action) => {
-	let clientDetail = state.clientDetail;
-	clientDetail.display = false;
-	clientDetail.client = null;
 	return {
 		...state,
-		clientList: true,
-		clientDetail: clientDetail
+		clientDetail: null
 	}
 };
 
