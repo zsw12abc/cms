@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import ClientCardsDisplay from './Clients/ClientCardsDisplay';
 import ClientDetailDisplay from './Clients/ClientDetail/ClientDetailDisplay';
 
@@ -21,7 +22,13 @@ class MainContent extends Component {
 		}
 		return (
 			<div className={styles}>
-				{mainContent}
+				{/*{mainContent}*/}
+				<Switch>
+					<Route path={'/Client/:id'} exact component={ClientDetailDisplay}/>
+					<Route path={'/'} exact component={ClientCardsDisplay}/>
+					<Redirect from={'/Client'} to={'/'}/>
+					<Route render={() => <h1>404 Pages Not Found</h1>}/>
+				</Switch>
 			</div>
 		);
 	}

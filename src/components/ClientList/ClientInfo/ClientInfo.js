@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
+import {Link} from 'react-router-dom';
 
 import './ClientInfo.css';
 
@@ -87,10 +88,12 @@ class ClientInfo extends Component {
 						</div>
 					</div>
 					<div className={'row justify-content-end'}>
-						<button className={'Detail'} onClick={() => this.props.detailButtonClicked(person)}>
-							<FontAwesome name={'address-book'}/>
-							<span className={'More'}>more</span>
-						</button>
+						<Link to={'/Client/' + person.id}>
+							<button className={'Detail'} onClick={() => this.props.detailButtonClicked(person)}>
+								<FontAwesome name={'address-book'}/>
+								<span className={'More'}>more</span>
+							</button>
+						</Link>
 					</div>
 				</div>
 			)

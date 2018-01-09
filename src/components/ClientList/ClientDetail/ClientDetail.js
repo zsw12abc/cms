@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
+import {Link} from 'react-router-dom';
 
 import './ClientDetail.css'
 
 class ClientDetail extends Component {
 	render() {
+		console.log(this.props);
 		const clientDetail = this.props.clientDetail;
 		const client = clientDetail.client;
 		return (
@@ -42,24 +44,30 @@ class ClientDetail extends Component {
 							<p className={'Tag'}>Company:</p>
 							<p className={'TagContent'}>{client.company}</p>
 						</div>
-						<button
-							className={"col-sm-4 btn btn-outline-danger "}
-							onClick={() => {
-								this.props.deleteButtonClicked(client);
-								this.props.cancelButtonClicked()
-							}}>
-							<FontAwesome name={'trash'}/>
-						</button>
-						<button
-							className={"col-sm-4 btn btn-outline-info "}
-							onClick={this.props.cancelButtonClicked}>
-							<FontAwesome name={'undo'}/>
-						</button>
-						<button
-							className={"col-sm-4 btn btn-outline-success"}
-							onClick={() => this.props.cancelButtonClicked()}>
-							<FontAwesome name={'check'}/>
-						</button>
+						<Link to={'/'}>
+							<button
+								className={"col-sm-4 btn btn-outline-danger "}
+								onClick={() => {
+									this.props.deleteButtonClicked(client);
+									this.props.cancelButtonClicked()
+								}}>
+								<FontAwesome name={'trash'}/>
+							</button>
+						</Link>
+						<Link to={'/'}>
+							<button
+								className={"col-sm-4 btn btn-outline-info "}
+								onClick={this.props.cancelButtonClicked}>
+								<FontAwesome name={'undo'}/>
+							</button>
+						</Link>
+						<Link to={'/'}>
+							<button
+								className={"col-sm-4 btn btn-outline-success"}
+								onClick={() => this.props.cancelButtonClicked()}>
+								<FontAwesome name={'check'}/>
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>
