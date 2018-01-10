@@ -46,8 +46,8 @@ class ClientDetail extends Component {
 							<button
 								className={"col-sm-4 btn btn-outline-danger "}
 								onClick={() => {
+									this.props.cancelButtonClicked();
 									this.props.deleteButtonClicked(client);
-									this.props.cancelButtonClicked()
 								}}>
 								<FontAwesome name={'trash'}/>
 							</button>

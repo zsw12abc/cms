@@ -20,7 +20,7 @@ class ClientDetailDisplay extends Component {
 				clientDetail={selectedPerson}
 				// cancelButtonClicked={this.props.onCancelClientDetailCounter}
 				cancelButtonClicked={() => {
-					this.props.history.push('/');
+					this.props.history.push({pathname: '/'});
 					this.props.onCancelClientDetailCounter()
 				}}
 				deleteButtonClicked={this.props.onDeleteClientDetailCounter}
